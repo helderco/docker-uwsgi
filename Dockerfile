@@ -1,16 +1,16 @@
 FROM python:2.7
-MAINTAINER Helder Correia <helder.mc@gmail.com>
+MAINTAINER Helder Correia <me@heldercorreia.com>
 
 # install uwsgi
 RUN pip install uwsgi uwsgitop
 COPY uwsgi.ini /etc/
 
-# run in /app
-RUN mkdir -p /app
-WORKDIR /app
+# run in /usr/src/app
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
 
 # expose uwsgi socket and stats ports
-EXPOSE 3000 9000
+EXPOSE 9000 3000
 
 # run uwsgi
 CMD ["uwsgi", "/etc/uwsgi.ini"]
