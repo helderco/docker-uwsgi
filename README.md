@@ -1,4 +1,3 @@
-docker-uwsgi
-============
+# docker-uwsgi (DEPRECATED)
 
 Dockerfile for uwsgi
